@@ -1,0 +1,31 @@
+@import '../../../styles/variable';
+@import '../../../styles/functions';
+@import '../../../styles/buttons';
+
+.con-roulette {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: rem(100);
+  cursor: pointer;
+  font-size: rem(28);
+  line-height: rem(28);
+  width: 52%;
+  color: $color-text-primary;
+  width: 100%;
+
+  &__container {
+    background-color: rgba($color: $color-text-secondary, $alpha: .76);
+
+    &.sending {
+      .con-roulette__theme {
+        filter: blur(8px);
+        transition: all 0s;
+      }
+    }
+  }
+
+  &__theme {
+    transition: all 2s;
+  }
+}

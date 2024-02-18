@@ -1,0 +1,32 @@
+<div class="con-game-board">
+  <section class="con-game-board__section con-game-board__teams">
+    <h2 class="con-game-board__title mat-h2">Equipos</h2>
+
+    <app-team></app-team>
+  </section>
+  
+  <section class="con-game-board__section con-game-board__info">
+    <h2 class="con-game-board__title mat-h2">Ronda</h2>
+
+    <app-round></app-round>
+
+    <h2 class="con-game-board__title mat-h2">Temas</h2>
+
+    <div class="con-game-board__roulette">
+      <app-roulette></app-roulette>
+    </div>
+  
+    <div class="con-game-board__btn-container">
+      <button mat-flat-button color="primary" [routerLink]="['/game-options', '1']">Edad famosos</button>
+      <button mat-flat-button color="primary" [routerLink]="['/game-options', '2']">Población</button>
+      <button mat-flat-button color="primary" [routerLink]="['/game-options', '3']">Garaje de ideas</button>
+      <button mat-flat-button color="primary" [routerLink]="['/game-options', '4']">Frontend</button>
+    </div>
+
+  </section>
+
+  <img class="con-game-board__logo" src="../../../assets/images/logo-g.png">
+
+</div>
+
+

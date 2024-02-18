@@ -1,0 +1,94 @@
+@import '../../../styles/variable';
+@import '../../../styles/functions';
+
+.con-team {
+
+  &__list-team{
+
+  }
+
+  &__item-team {
+    display: flex;
+    min-height: rem(80);
+    margin-bottom: rem(16);
+    position: relative;
+
+    &.active::before {
+      content:url('../../../assets/images/arrow.svg');
+      position: absolute;
+      left: 0;
+      top: calc(50% - (42px / 2));
+      width: rem(51);
+      height: rem(42);
+    }
+  }
+
+  &__team-box {
+    background-color: rgba($color: $color-text-secondary, $alpha: .76);
+    padding: rem(12);
+    display: flex;
+    width: 93%;
+    align-items: center;
+  }
+
+  &__icon-act {
+    width: 7%;
+  }
+
+  &__number {
+    font-size: rem(28);
+    width: 6%;
+    text-align: center;
+    padding-right: rem(12);
+    line-height: rem(28);
+    color: $color-text-primary;
+  }
+
+  &__name {
+    font-size: rem(26);
+    line-height: normal;
+    width: 52%;
+    color: $color-text-primary;
+  }
+
+  &__name-team {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+  }
+
+  &__name-people {
+    font-size: rem(15);
+    display: block;
+    width: 100%;
+  }
+
+  &__icons {
+    width: 23%;
+    display: flex;
+    padding: 0 rem(16);
+    align-items: center;
+    justify-content: space-around;
+
+  }
+
+  &__btn {
+    cursor: pointer;
+    display: flex;
+
+    &.active {
+      opacity: .5;
+    }
+  }
+
+  &__poits {
+    width: 18%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    font-size: rem(50);
+    color: $color-text-primary;
+  }
+}

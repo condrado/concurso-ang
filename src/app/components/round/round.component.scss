@@ -1,0 +1,29 @@
+@import '../../../styles/variable';
+@import '../../../styles/functions';
+
+.con-round {
+  &__item-team {
+    display: flex;
+    min-height: rem(80);
+    margin-bottom: rem(16);
+    position: relative;
+  }
+
+  &__team-box {
+    background-color: rgba($color: $color-text-secondary, $alpha: .76);
+    padding: rem(12);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  &__poits {
+    display: flex;
+    align-items: center;
+    font-size: rem(50);
+    color: $color-text-primary;
+    justify-content: space-around;
+    width: auto;
+  }
+}

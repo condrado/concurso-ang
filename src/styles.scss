@@ -1,1 +1,184 @@
-/* You can add global styles to this file, and also import other style files */
+/* Add application styles & imports to this file! */
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,400;0,600;1,100;1,400;1,600&display=swap');
+@import'./styles/variable';
+@import'./styles/functions';
+
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+    - The "html" attribute is exclud, because otherwise a bug in Chrome breaks the CSS hyphens property (https://github.com/elad2412/the-new-css-reset/issues/36)
+ */
+*:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'K2D', sans-serif;
+}
+
+/* Reapply the pointer cursor for anchor tags */
+a, button {
+    cursor: revert;
+}
+
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+
+/* For images to not be able to exceed their container */
+img {
+    max-inline-size: 100%;
+    max-block-size: 100%;
+}
+
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+
+/* Safari - solving issue when using user-select:none on the <body> text input doesn't working */
+input, textarea {
+    -webkit-user-select: auto;
+}
+
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+
+/* minimum style to allow to style meter element */
+meter {
+    -webkit-appearance: revert;
+    appearance: revert;
+}
+
+/* preformatted text - use only for this feature */
+:where(pre) {
+    all: revert;
+}
+
+/* reset default text opacity of input placeholder */
+::placeholder {
+    color: unset;
+}
+
+/* remove default dot (•) sign */
+::marker {
+    content: initial;
+}
+
+/* fix the feature of 'hidden' attribute.
+   display:revert; revert to element instead of attribute */
+:where([hidden]) {
+    display: none;
+}
+
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly.
+   - webkit-user-select: auto; added for Safari in case of using user-select:none on wrapper element */
+:where([contenteditable]:not([contenteditable="false"])) {
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+    -webkit-user-select: auto;
+}
+
+/* apply back the draggable feature - exist only in Chromium and Safari */
+:where([draggable="true"]) {
+    -webkit-user-drag: element;
+}
+
+/* Revert Modal native behavior */
+:where(dialog:modal) {
+    all: revert;
+}
+
+
+.mat-h1,.mat-headline-5,.mat-typography .mat-h1,.mat-typography .mat-headline-5,.mat-typography h1 {
+    font: 400 24px/32px 'K2D', sans-serif;
+    letter-spacing: normal;
+    margin: 0 0 16px
+}
+
+.mat-h2,.mat-headline-6,.mat-typography .mat-h2,.mat-typography .mat-headline-6,.mat-typography h2 {
+    font: 500 20px/32px 'K2D', sans-serif;
+    letter-spacing: .0125em;
+    margin: 0 0 16px
+}
+
+.mat-h3,.mat-subtitle-1,.mat-typography .mat-h3,.mat-typography .mat-subtitle-1,.mat-typography h3 {
+    font: 400 16px/28px 'K2D', sans-serif;
+    letter-spacing: .009375em;
+    margin: 0 0 16px
+}
+
+.mat-h4,.mat-body-1,.mat-typography .mat-h4,.mat-typography .mat-body-1,.mat-typography h4 {
+    font: 400 16px/24px 'K2D', sans-serif;
+    letter-spacing: .03125em;
+    margin: 0 0 16px
+}
+
+.mat-h5,.mat-typography .mat-h5,.mat-typography h5 {
+    font: 400 calc(14px*.83)/20px 'K2D', sans-serif;
+    margin: 0 0 12px
+}
+
+.mat-h6,.mat-typography .mat-h6,.mat-typography h6 {
+    font: 400 calc(14px*.67)/20px 'K2D', sans-serif;
+    margin: 0 0 12px
+}
+
+.mat-body-strong,.mat-subtitle-2,.mat-typography .mat-body-strong,.mat-typography .mat-subtitle-2 {
+    font: 500 14px/22px 'K2D', sans-serif;
+    letter-spacing: .0071428571em
+}
+
+.mat-body,.mat-body-2,.mat-typography .mat-body,.mat-typography .mat-body-2,.mat-typography {
+    font: 400 14px/20px 'K2D', sans-serif;
+    letter-spacing: .0178571429em
+}
+
+.mat-body p,.mat-body-2 p,.mat-typography .mat-body p,.mat-typography .mat-body-2 p,.mat-typography p {
+    margin: 0 0 12px
+}
+
+.mat-small,.mat-caption,.mat-typography .mat-small,.mat-typography .mat-caption {
+    font: 400 12px/20px 'K2D', sans-serif;
+    letter-spacing: .0333333333em
+}
+
+.mat-headline-1,.mat-typography .mat-headline-1 {
+    font: 300 96px/96px 'K2D', sans-serif;
+    letter-spacing: -0.015625em;
+    margin: 0 0 56px
+}
+
+.mat-headline-2,.mat-typography .mat-headline-2 {
+    font: 300 60px/60px 'K2D', sans-serif;
+    letter-spacing: -.0083333333em;
+    margin: 0 0 64px
+}
+
+.mat-headline-3,.mat-typography .mat-headline-3 {
+    font: 400 48px/50px 'K2D', sans-serif;
+    letter-spacing: normal;
+    margin: 0 0 64px
+}
+
+.mat-headline-4,.mat-typography .mat-headline-4 {
+    font: 400 34px/40px 'K2D', sans-serif;
+    letter-spacing: .0073529412em;
+    margin: 0 0 64px
+}
+
+@import'../src/styles/buttons';
+@import'../src/app/app.component.scss';

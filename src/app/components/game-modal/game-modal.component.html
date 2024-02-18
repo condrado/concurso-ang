@@ -1,0 +1,49 @@
+<div class="con-modal" *ngIf="!isHiddenModal">
+  <div class="con-modal__content">
+    @if (isSelectedOption) {
+      @if (isConfirm) {
+        <p class="con-modal__text">
+          <span>La respuesta ha sido</span>
+        </p>
+        @if (isCorrect) {
+          <p class="con-modal__points">
+            CORRECTA
+          </p>
+          <p class="con-modal__text">
+            Sumas un 1 punto
+          </p>
+        } @else { 
+          <p class="con-modal__points">
+            INCORRECTA
+          </p>
+          <p class="con-modal__text">
+            No sumas ningún pumto
+          </p>
+        }
+        <button mat-flat-button color="primary" routerLink="/game-board">Continuar</button>
+      } @else { 
+        <p class="con-modal__text">
+          <span>Tu respuesta ha sido la</span>
+        </p>
+        <p class="con-modal__points">
+          Opcion {{selectedOption}}
+        </p>
+        <p class="con-modal__text">
+          {{selectedOptionText}}
+        </p>
+        <button mat-flat-button color="primary" (click)="confirm()">Confirmar</button>
+      }
+    } @else { 
+      <p class="con-modal__text" >
+        <span>El tiempo a finalizado y no has seleccionado una opción.</span>
+        <span>Ha sconseguido:</span>
+      </p>
+      <p class="con-modal__points">
+        <span>0</span> puntos
+      </p>
+      <button mat-flat-button color="primary" routerLink="/game-board">Continuar</button>
+    }
+
+   
+  </div>
+</div>

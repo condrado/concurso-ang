@@ -1,0 +1,5 @@
+<div class="con-roulette__container" [ngClass]="[sending]"> 
+  <div class="con-roulette" (click)="generateNumber()">
+    <span [ngClass]="['con-roulette__theme theme-' + generatedNumber]">{{ listThemes[generatedNumber] }}</span>
+  </div> 
+</div>

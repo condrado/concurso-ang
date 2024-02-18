@@ -1,0 +1,53 @@
+<section class="con-option-content">
+  <div class="con-option-content__title-content">
+    <h2 class="con-option-content__title mat-h1">¿Qué país tiene mayor número de habitantes?</h2>
+    <h3 class="con-option-content__subtitle mat-h2">
+      <span>Turno del equipo:</span>
+      <span>Equipo con un nombre largo para que...</span>
+    </h3>
+  </div>
+
+  <div class="con-option-content__content">
+    <div class="con-option-content__cards" [ngClass]="[classOption]">
+      <div *ngFor="let option of options; index as i"  class="con-option-content__card" [ngClass]="['card-' + (i + 1)]" (click)="selectOption($event)">
+        <h4 class="con-option-content__card-title mat-h1">Opcion {{i + 1}}</h4>
+        <img src="{{option.img}}" >
+        <p class="con-option-content__card-footer mat-h2">{{option.name}}</p>
+      </div>
+    </div>
+    @if (!isHiddenTime) {
+      <div class="con-option-content__time">
+        <span class="con-option-content__time-sec">{{totalTime}}</span>
+      </div>
+    }
+  </div>
+
+  @if (isSelectedOption) {
+    <button mat-flat-button color="primary" (click)="confirm()">Confirmar</button>
+  }
+
+  <img class="con-option-content__logo" src="../../../assets/images/logo-g.png">
+
+  <app-game-modal
+    [isHiddenModal]="isHiddenMod"
+    [isSelectedOption]="isSelectedOption"
+    [selectedOption]="selectedOption"
+    [selectedOptionText]="selectedOptionText"
+    [isCorrect]="isCorrect"
+  ></app-game-modal>
+
+
+  <div class="hidden">
+    <div class="list">
+        <p>Numero de trues {{optionsData.length}}</p>
+        <p>Priemros ok {{primeroOk}}</p>
+        <p>Segundos ok {{segundoOk}}</p>
+        <p *ngFor="let countrie of countries">
+            <span class="col-1">{{countrie.name}}</span>
+            <span class="col-2">{{countrie.similar}}</span>
+            <span class="col-3">{{countrie.active}}</span>
+        </p>
+    </div>
+  </div>
+  
+</section>
